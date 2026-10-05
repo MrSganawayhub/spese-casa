@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Spese Casa</title>
+  <meta name="description" content="Gestione condivisa delle spese di casa">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-title">
+      <h1>Spese Casa</h1>
+      <button id="syncStatus" class="sync" data-act="sync"></button>
+    </div>
+    <button class="icon-btn" data-act="sync" aria-label="Sincronizza">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>
+    </button>
+    <button class="icon-btn" data-act="settings" aria-label="Impostazioni">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+    </button>
+  </header>
+
+  <main id="view"></main>
+
+  <button id="fab" class="fab" data-act="newMov" aria-label="Nuova spesa">+</button>
+
+  <nav class="tabs">
+    <button data-act="tab" data-tab="mese"><span>📊</span>Mese</button>
+    <button data-act="tab" data-tab="movimenti"><span>🧾</span>Movimenti</button>
+    <button data-act="tab" data-tab="fisse"><span>📅</span>Fisse</button>
+    <button data-act="tab" data-tab="stats"><span>📈</span>Analisi</button>
+  </nav>
+
+  <div id="sheet" class="sheet hidden">
+    <div class="sheet-backdrop" data-act="closeSheet"></div>
+    <div class="sheet-panel" id="sheetPanel"></div>
+  </div>
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
